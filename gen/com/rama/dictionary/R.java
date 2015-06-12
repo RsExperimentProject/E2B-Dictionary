@@ -14,6 +14,11 @@ public final class R {
     }
     public static final class attr {
     }
+    public static final class color {
+        public static final int actionbarDivider_background=0x7f050001;
+        public static final int actionbar_background=0x7f050000;
+        public static final int actionbar_text_color=0x7f050002;
+    }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
 
@@ -21,36 +26,36 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f050000;
-        public static final int activity_vertical_margin=0x7f050001;
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
         public static final int background_round_corner_edittext=0x7f020000;
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int Normal=0x7f090013;
-        public static final int action_settings=0x7f090010;
-        public static final int banglaView=0x7f090011;
-        public static final int bookmarkListView=0x7f090009;
-        public static final int bookmarks=0x7f090014;
-        public static final int dictionaryList=0x7f090002;
-        public static final int e2b=0x7f09000e;
-        public static final int englishView=0x7f090012;
-        public static final int etBookMarksSearch=0x7f090008;
-        public static final int etSearch=0x7f090001;
-        public static final int exit=0x7f090015;
-        public static final int fullView=0x7f09000f;
-        public static final int lv_bangla=0x7f090003;
-        public static final int lv_eng=0x7f090004;
-        public static final int setBookMarks=0x7f090007;
-        public static final int setDictionary=0x7f090000;
-        public static final int txt_bang=0x7f09000d;
-        public static final int txt_bangla=0x7f090005;
-        public static final int txt_eng=0x7f09000c;
-        public static final int txt_english=0x7f090006;
-        public static final int view_bang=0x7f09000b;
-        public static final int view_eng=0x7f09000a;
+        public static final int Normal=0x7f0a0013;
+        public static final int action_settings=0x7f0a0010;
+        public static final int banglaView=0x7f0a0011;
+        public static final int bookmarkListView=0x7f0a0009;
+        public static final int bookmarks=0x7f0a0014;
+        public static final int dictionaryList=0x7f0a0002;
+        public static final int e2b=0x7f0a000e;
+        public static final int englishView=0x7f0a0012;
+        public static final int etBookMarksSearch=0x7f0a0008;
+        public static final int etSearch=0x7f0a0001;
+        public static final int exit=0x7f0a0015;
+        public static final int fullView=0x7f0a000f;
+        public static final int lv_bangla=0x7f0a0003;
+        public static final int lv_eng=0x7f0a0004;
+        public static final int setBookMarks=0x7f0a0007;
+        public static final int setDictionary=0x7f0a0000;
+        public static final int txt_bang=0x7f0a000d;
+        public static final int txt_bangla=0x7f0a0005;
+        public static final int txt_eng=0x7f0a000c;
+        public static final int txt_english=0x7f0a0006;
+        public static final int view_bang=0x7f0a000b;
+        public static final int view_eng=0x7f0a000a;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -61,28 +66,19 @@ public final class R {
         public static final int e2b_patern=0x7f030005;
     }
     public static final class menu {
-        public static final int b2_e=0x7f080000;
-        public static final int book_marks=0x7f080001;
-        public static final int main=0x7f080002;
+        public static final int b2_e=0x7f090000;
+        public static final int book_marks=0x7f090001;
+        public static final int main=0x7f090002;
     }
     public static final class string {
-        public static final int action_settings=0x7f060001;
-        public static final int app_name=0x7f060000;
-        public static final int hello_world=0x7f060002;
-        public static final int title_activity_book_marks=0x7f060004;
-        public static final int title_activity_e2_b=0x7f060003;
+        public static final int action_settings=0x7f070001;
+        public static final int app_name=0x7f070000;
+        public static final int hello_world=0x7f070002;
+        public static final int title_activity_book_marks=0x7f070004;
+        public static final int title_activity_e2_b=0x7f070003;
     }
     public static final class style {
         /** 
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        
-
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
     
@@ -94,10 +90,8 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
-        /**  Application theme. 
- All customizations that are NOT specific to a particular API-level can go here. 
-         */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppBaseTheme=0x7f080002;
+        public static final int MyActionBar=0x7f080001;
+        public static final int MyTheme=0x7f080000;
     }
 }
