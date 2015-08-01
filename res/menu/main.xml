@@ -1,37 +1,31 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/banglaView"
-        android:icon="@drawable/ic_launcher"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="B2E"/>
-    <item
-        android:id="@+id/englishView"
-        android:icon="@drawable/ic_launcher"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="E2B"/>
-    <item
-        android:id="@+id/fullView"
+        android:id="@+id/action_fullView"
         android:icon="@drawable/ic_launcher"
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="List View"/>
     <item
-        android:id="@+id/Normal"
+        android:id="@+id/action_Normal"
         android:icon="@drawable/ic_launcher"
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="Normal View"/>
+     <item
+        android:id="@+id/action_font"
+        android:icon="@drawable/ic_launcher"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Font"/>
     <item
-        android:id="@+id/bookmarks"
+        android:id="@+id/action_bookmarks"
         android:icon="@drawable/ic_launcher"
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="BookMarks"/>
     <item
-        android:id="@+id/exit"
+        android:id="@+id/action_exit"
         android:icon="@drawable/ic_launcher"
         android:orderInCategory="100"
         android:showAsAction="never"

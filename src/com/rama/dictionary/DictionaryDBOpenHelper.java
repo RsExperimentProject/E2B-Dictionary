@@ -29,7 +29,7 @@ public class DictionaryDBOpenHelper extends SQLiteOpenHelper {
 	public static final String DICTIONARY_STATUS_FIELD = "status";
 	public static final String USER_FIELD = "user_created";
 
-	public DictionaryDBOpenHelper(Context context) {
+	private DictionaryDBOpenHelper(Context context) {
 		super(context, DB_NAME, null, 1);
 		this.context = context;
 

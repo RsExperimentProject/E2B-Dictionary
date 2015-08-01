@@ -7,6 +7,12 @@ public class Bean {
 	private String status;
 	private String user;
 
+
+	public Bean( String engWord){
+		this.engWord = engWord;
+	}
+	
+	
 	public Bean( String engWord, String bangWord){
 		this.engWord = engWord;
 		this.bangWord = bangWord;

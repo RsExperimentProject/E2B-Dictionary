@@ -34,36 +34,30 @@ public final class R {
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int Normal=0x7f0a0013;
-        public static final int action_settings=0x7f0a0010;
-        public static final int banglaView=0x7f0a0011;
-        public static final int bookmarkListView=0x7f0a0009;
-        public static final int bookmarks=0x7f0a0014;
+        public static final int action_Normal=0x7f0a000e;
+        public static final int action_bookmarks=0x7f0a0010;
+        public static final int action_exit=0x7f0a0011;
+        public static final int action_font=0x7f0a000f;
+        public static final int action_fullView=0x7f0a000d;
+        public static final int action_settings=0x7f0a000c;
+        public static final int bookmarkListView=0x7f0a0005;
         public static final int dictionaryList=0x7f0a0002;
-        public static final int e2b=0x7f0a000e;
-        public static final int englishView=0x7f0a0012;
-        public static final int etBookMarksSearch=0x7f0a0008;
+        public static final int e2b=0x7f0a000a;
+        public static final int etBookMarksSearch=0x7f0a0004;
         public static final int etSearch=0x7f0a0001;
-        public static final int exit=0x7f0a0015;
-        public static final int fullView=0x7f0a000f;
-        public static final int lv_bangla=0x7f0a0003;
-        public static final int lv_eng=0x7f0a0004;
-        public static final int setBookMarks=0x7f0a0007;
+        public static final int fullView=0x7f0a000b;
+        public static final int setBookMarks=0x7f0a0003;
         public static final int setDictionary=0x7f0a0000;
-        public static final int txt_bang=0x7f0a000d;
-        public static final int txt_bangla=0x7f0a0005;
-        public static final int txt_eng=0x7f0a000c;
-        public static final int txt_english=0x7f0a0006;
-        public static final int view_bang=0x7f0a000b;
-        public static final int view_eng=0x7f0a000a;
+        public static final int txt_bang=0x7f0a0009;
+        public static final int txt_eng=0x7f0a0008;
+        public static final int view_bang=0x7f0a0007;
+        public static final int view_eng=0x7f0a0006;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int b2e_list_view=0x7f030001;
-        public static final int b2e_patern=0x7f030002;
-        public static final int book_marks_acivity=0x7f030003;
-        public static final int e2b_list_view=0x7f030004;
-        public static final int e2b_patern=0x7f030005;
+        public static final int book_marks_acivity=0x7f030001;
+        public static final int e2b_list_view=0x7f030002;
+        public static final int e2b_patern=0x7f030003;
     }
     public static final class menu {
         public static final int b2_e=0x7f090000;

@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.rama.dictionary.BookMarksActivity"
+            android:name="com.rama.dictionary.activity.BookMarksActivity"
             android:label="@string/title_activity_book_marks" >
         </activity>
     </application>

@@ -1,7 +1,15 @@
-package com.rama.dictionary;
+package com.rama.dictionary.activity;
 
 import java.util.ArrayList;
 import java.util.Locale;
+
+import com.rama.dictionary.Bean;
+import com.rama.dictionary.BookMarksAdapter;
+import com.rama.dictionary.BookMarksDBHelper;
+import com.rama.dictionary.R;
+import com.rama.dictionary.R.id;
+import com.rama.dictionary.R.layout;
+import com.rama.dictionary.R.menu;
 
 import android.app.Activity;
 import android.app.AlertDialog;

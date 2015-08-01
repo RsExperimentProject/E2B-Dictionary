@@ -1,56 +1,61 @@
 package com.rama.dictionary;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
-public class E2BDictionaryAdapter extends BaseAdapter {
+public class E2BDictionaryAdapter extends BaseAdapter implements Filterable {
 	public static final String FONT = "SolaimanLipi.ttf";
 
-	LayoutInflater inflater;
-	private Context mcontext;
-	private List<Bean> singleWord = null;
-	private ArrayList<Bean> allWords = new ArrayList<Bean>();
+	SharedPreferences preferences;
+	private static final String myPreference = "Mypreference";
+
+	Context context;
+	ArrayList<Bean> wordLists;
+	ArrayList<Bean> searchWorld;
+
+	WordFilter valueFilter;
 
 	public E2BDictionaryAdapter(Context context, ArrayList<Bean> words) {
-		mcontext = context;
-		this.singleWord = words;
-		inflater = LayoutInflater.from(mcontext);
-		this.allWords.addAll(words);
-	}
-
-	public class ViewHolder {
-		TextView eng_word;
-		TextView bang_word;
-		// CheckBox check;
+		this.context = context;
+		this.wordLists = words;
+		this.searchWorld = words;
 	}
 
 	@Override
 	public int getCount() {
-		return singleWord.size();
+		return wordLists.size();
 	}
 
 	@Override
-	public Bean getItem(int position) {
-		return singleWord.get(position);
+	public Object getItem(int position) {
+		return wordLists.get(position);
+	}
+
+	public class ViewHolder {
+		TextView eng_word, bang_word;
 	}
 
 	@Override
 	public long getItemId(int position) {
-		return position;
+		return wordLists.indexOf(getItem(position));
 	}
 
 	@Override
-	public View getView(final int position, View convertView, ViewGroup parent) {
-		final ViewHolder holder;
+	public View getView(int position, View convertView, ViewGroup parent) {
+		LayoutInflater inflater = (LayoutInflater) context
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		ViewHolder holder;
 		if (convertView == null) {
 			holder = new ViewHolder();
 			convertView = inflater.inflate(R.layout.e2b_patern, null);
@@ -66,29 +71,79 @@ public class E2BDictionaryAdapter extends BaseAdapter {
 			holder = (ViewHolder) convertView.getTag();
 		}
 
-		holder.eng_word.setText(singleWord.get(position).getEngWord());
-		holder.bang_word.setText(singleWord.get(position).getBangWord());
+		holder.eng_word.setText(wordLists.get(position).getEngWord());
+		holder.bang_word.setText(wordLists.get(position).getBangWord());
 		holder.bang_word.setTypeface(Typeface.createFromAsset(
-				mcontext.getAssets(), E2BDictionaryAdapter.FONT));
-
+				context.getAssets(), E2BDictionaryAdapter.FONT));
+		if (getFont().equals("Small")) {
+			holder.eng_word.setTextSize(15);
+			holder.bang_word.setTextSize(15);
+		} else if (getFont().equals("Medium")) {
+			holder.eng_word.setTextSize(18);
+			holder.bang_word.setTextSize(18);
+		} else if (getFont().equals("Large")) {
+			holder.eng_word.setTextSize(21);
+			holder.bang_word.setTextSize(21);
+		} else if (getFont().equals("Extra Large")) {
+			holder.eng_word.setTextSize(24);
+			holder.bang_word.setTextSize(24);
+		}
 		return convertView;
 	}
 
-	// Filter Class
-	public void filter(String charText) {
-		charText = charText.toLowerCase(Locale.getDefault());
-		singleWord.clear();
-		if (charText.length() == 0) {
-			singleWord.addAll(allWords);
-		} else {
-			for (Bean wd : allWords) {
-				if (wd.getEngWord().toLowerCase(Locale.getDefault())
-						.contains(charText)) {
-					singleWord.add(wd);
-				}
-			}
+	@Override
+	public Filter getFilter() {
+		if (valueFilter == null) {
+			valueFilter = new WordFilter();
 		}
-		notifyDataSetChanged();
+		return valueFilter;
 	}
-	// Filter Class
+
+	private class WordFilter extends Filter {
+
+		@Override
+		protected FilterResults performFiltering(CharSequence constraint) {
+			FilterResults results = new FilterResults();
+			if (constraint != null && constraint.length() > 0) {
+				ArrayList<Bean> filterList = new ArrayList<Bean>();
+				for (int i = 0; i < searchWorld.size(); i++) {
+					if ((searchWorld.get(i).getEngWord().toLowerCase())
+							.contains(constraint.toString().toLowerCase())) {
+						Bean words = new Bean(searchWorld.get(i).getEngWord(),
+								searchWorld.get(i).getBangWord());
+						filterList.add(words);
+					}
+				}
+				results.count = filterList.size();
+				results.values = filterList;
+			} else {
+				results.count = searchWorld.size();
+				results.values = searchWorld;
+			}
+			return results;
+		}
+
+		@Override
+		protected void publishResults(CharSequence constraint,
+				FilterResults results) {
+			wordLists = (ArrayList<Bean>) results.values;
+			notifyDataSetChanged();
+		}
+
+	}
+
+	public  String getFont() {
+		preferences = context.getSharedPreferences(myPreference,
+				Context.MODE_PRIVATE);
+
+		String tempFonts;
+		String orginalFonts = "";
+
+		tempFonts = preferences.getString("select_fonts", "");
+		if (tempFonts != null && !tempFonts.equals(""))
+			orginalFonts = tempFonts;
+
+		Log.d("Disctionary adapter......... ", orginalFonts);
+		return orginalFonts;
+	}
 }

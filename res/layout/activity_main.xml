@@ -9,25 +9,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:padding="5dp"
+        android:padding="3dp"
         android:text="Dictionary"
         android:textColor="#D6732B"
         android:textSize="18dp" />
 
-    <EditText
+    <SearchView
         android:id="@+id/etSearch"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:background="@drawable/background_round_corner_edittext"
-        android:ems="10"
         android:gravity="center"
-        android:hint="search word"
+        android:iconifiedByDefault="false"
+        android:queryHint="search word..."
         android:inputType="textPersonName"
-        android:padding="4dp"
         android:textColor="#0000FF" >
-    </EditText>
+    </SearchView>
 
     <ListView
         android:id="@+id/dictionaryList"
